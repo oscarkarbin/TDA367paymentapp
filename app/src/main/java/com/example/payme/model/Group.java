@@ -1,4 +1,4 @@
-package com.example.payme;
+package com.example.payme.model;
 
 import java.util.ArrayList;
 import java.util.List;
