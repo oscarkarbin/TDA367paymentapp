@@ -11,14 +11,19 @@ public class Member {
 
     }
 
-    public void getName(String name){
+    public String getName(String name){
         Scanner sc = new Scanner(System.in);
         System.out.println("Enter name of member ");
         this.name = sc.nextLine();
+        return this.name;
     }
 
     public Balance getBalance(Balance balance) {
         return balance;
+    }
+
+    public void resetBalance(){
+
     }
 
 //    public int calculateBalance(Balance balance){
