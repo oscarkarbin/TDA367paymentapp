@@ -9,11 +9,25 @@ import java.util.List;
 public class Group {
     private List<Member> groupMembers = new ArrayList<>();
     private List<Event> groupEvents = new ArrayList<>();
-    private String name;
+    private String groupName;
 
 
     public Group(String name, List<Member> members) {
-        this.name = name;
+        this.groupName = name;
         this.groupMembers = members;
+    }
+
+    public String getGroupName() {
+        return groupName;
+    }
+    public List<Member> getGroupMembers() {
+        return new ArrayList<>(groupMembers);
+    }
+    public void resetDebts() {
+        for(Event e : groupEvents) {
+            if(e.isActive()) {
+                e.markEventAsDone();
+            }
+        }
     }
 }
