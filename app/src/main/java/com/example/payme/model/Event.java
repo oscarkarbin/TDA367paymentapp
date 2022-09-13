@@ -1,6 +1,14 @@
 package com.example.payme.model;
 
+
+import android.os.Build;
+
+import androidx.annotation.RequiresApi;
+
+import java.text.SimpleDateFormat;
+import java.time.Clock;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 public class Event {
@@ -16,8 +24,16 @@ public class Event {
         return active;
     }
 
-
     public void markEventAsDone() {
         active = false;
     }
+
+    @RequiresApi(api = Build.VERSION_CODES.O)
+    public void currentDate(){
+        SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");
+        Date date = new Date();
+        System.out.println(formatter.format(date));
+
+    }
+    
 }
