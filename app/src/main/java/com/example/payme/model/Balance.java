@@ -1,9 +1,11 @@
 package com.example.payme.model;
 
 public class Balance {
-    Member member;
-     private int balance;
+    private int balanceValue;
+    public Balance(int balancevalue) {
+        this.balanceValue = balancevalue;
+    }
     public int getBalance(){
-        return balance;
+        return balanceValue;
     }
 }
