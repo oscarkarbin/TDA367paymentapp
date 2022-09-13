@@ -24,6 +24,12 @@ public class Group {
         return new ArrayList<>(groupMembers);
     }
     public void resetDebts() {
+        for(Member m : groupMembers) {
+            m.resetBalance();
+        }
+        setAllEventsInactive();
+    }
+    private void setAllEventsInactive() {
         for(Event e : groupEvents) {
             if(e.isActive()) {
                 e.markEventAsDone();
