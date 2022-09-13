@@ -16,6 +16,8 @@ public class Event {
     private String eventName;
     private boolean active;
 
+    private MemberCost memberCost;
+
     public Event(String eventName, List<Member> eventMembers){
         this.eventName = eventName;
         this.active = true;
@@ -27,10 +29,11 @@ public class Event {
             checkEventMember(member);
         }
         catch (RuntimeException e){
-            System.out.println("Member is already added to event!");
+            System.out.println("Member already exists.");
         }
     }
 
+    //TODO Map instead of membercost class
     private void checkEventMember(Member member){
         if(!eventMembers.contains(member)){
             eventMembers.add(member);
