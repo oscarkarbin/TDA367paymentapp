@@ -19,7 +19,31 @@ public class Event {
     public Event(String eventName, List<Member> eventMembers){
         this.eventName = eventName;
         this.active = true;
+        this.eventMembers = eventMembers;
     }
+
+    public void addEventMembers(Member member) throws RuntimeException{
+        try{
+            checkEventMember(member);
+        }
+        catch (RuntimeException e){
+            System.out.println("Member is already added to event!");
+        }
+    }
+
+    private void checkEventMember(Member member){
+        if(!eventMembers.contains(member)){
+            eventMembers.add(member);
+        }
+        else{
+            throw new RuntimeException();
+        }
+    }
+
+    public void setEventName(String name){
+        eventName = name;
+    }
+
     public boolean isActive() {
         return active;
     }
@@ -29,7 +53,7 @@ public class Event {
     }
 
     @RequiresApi(api = Build.VERSION_CODES.O)
-    public void currentDate(){
+    public void getCurrentDate(){
         SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");
         Date date = new Date();
         System.out.println(formatter.format(date));
