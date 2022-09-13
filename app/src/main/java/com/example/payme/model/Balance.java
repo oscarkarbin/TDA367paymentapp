@@ -8,4 +8,8 @@ public class Balance {
     public int getBalance(){
         return balanceValue;
     }
+
+    public void resetBalance() {
+        balanceValue = 0;
+    }
 }
