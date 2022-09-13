@@ -1,5 +1,12 @@
 package com.example.payme;
 
+import java.util.List;
+
 public class Member {
-    int hej;
+    String name;
+
+
+    public Member(){
+        this.name = name;
+    }
 }
