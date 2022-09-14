@@ -3,23 +3,29 @@ package com.example.payme.model;
 import java.util.List;
 
 public class Balance {
-    private int balanceValue;
+    private double balanceValue;
     private List<Member> members;
     public Balance(int balancevalue, List<Member> memberList) {
         this.balanceValue = balancevalue;
         this.members = memberList;
 
     }
-    public int getBalance(){
+    public double getCredit(){
         return balanceValue;
     }
 
-    public void resetBalance() {
+    public void resetCredit() {
         balanceValue = 0;
     }
 
-    void updateBalance(Member memberThatPays, double amountToPay, Member memberToPay){
-
+    public void uptadeCredit(double credit){
+        balanceValue+=credit;
     }
+
+    void updateBalance(Member memberThatPays, double amountToPay, Member memberToPay){
+        memberThatPays.getBalance().uptadeCredit(-amountToPay);
+        memberToPay.getBalance().uptadeCredit(amountToPay);
+    }
+
 
 }

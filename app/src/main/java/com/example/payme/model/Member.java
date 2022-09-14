@@ -35,7 +35,7 @@ public class Member {
     }
 
     public void resetBalance(){
-        balance.resetBalance();
+        balance.resetCredit();
 
     }
 
