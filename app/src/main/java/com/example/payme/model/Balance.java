@@ -30,8 +30,8 @@ public class Balance {
 //    }
 
 
-    void updateBalanceMap(){
-
+    public void updateBalanceMap(){
+        //updateBalance();
         for(Member m: members){
             balanceMap.put(m.getName(),balanceValue);
         }
