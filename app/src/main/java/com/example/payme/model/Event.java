@@ -19,10 +19,11 @@ public class Event {
     private PaymentMethod paymentMethod;
 
 
-    public Event(String eventName, List<Member> eventMembers){
+    public Event(String eventName, List<Member> eventMembers, PaymentMethod paymentMethod){
         this.eventName = eventName;
         this.active = true;
         this.eventMembers = eventMembers;
+        this.paymentMethod = paymentMethod;
     }
 
     public void getPayer(){
