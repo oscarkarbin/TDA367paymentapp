@@ -29,6 +29,7 @@ public class Balance {
 //        balanceValue+=credit;
 //    }
 
+
     void updateBalanceMap(){
 
         for(Member m: members){
