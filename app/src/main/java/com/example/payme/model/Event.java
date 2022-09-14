@@ -15,6 +15,7 @@ public class Event {
     private String eventName;
     private boolean active;
 
+
     private Pair memberCost;
 
     public Event(String eventName, List<Member> eventMembers){
