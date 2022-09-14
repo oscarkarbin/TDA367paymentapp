@@ -14,7 +14,7 @@ public class PayDetail implements PaymentMethod{
             Member memberToPay = memberAndAmount.getFirst();
             Double amountToPay = memberAndAmount.getSecond();
             if(!(memberToPay == memberToGetPaid)){
-        //        memberToPay.updateBalance(memberToPay, amountToPay, memberToGetPaid);
+                memberToPay.updateBalance(memberToPay, amountToPay, memberToGetPaid);
             }
         }
     }
