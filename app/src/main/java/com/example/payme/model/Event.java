@@ -12,10 +12,11 @@ import java.util.List;
 
 public class Event {
     private List<Member> eventMembers = new ArrayList<>();
+    private Pair pairAmountMember ;
     private String eventName;
     private boolean active;
+    private PaymentMethod paymentMethod;
 
-    private Pair memberCost;
 
     public Event(String eventName, List<Member> eventMembers){
         this.eventName = eventName;
@@ -23,23 +24,12 @@ public class Event {
         this.eventMembers = eventMembers;
     }
 
-    public void addEventMembers(Member member) throws RuntimeException{
-        try{
-            checkEventMember(member);
-        }
-        catch (RuntimeException e){
-            System.out.println("Member already exists.");
-        }
+    public void getPayer(){
+        
     }
 
-    //TODO Map instead of membercost class
-    private void checkEventMember(Member member){
-        if(!eventMembers.contains(member)){
-            eventMembers.add(member);
-        }
-        else{
-            throw new RuntimeException();
-        }
+    public void addMembersToPair(){
+
     }
 
     public void setEventName(String name){
