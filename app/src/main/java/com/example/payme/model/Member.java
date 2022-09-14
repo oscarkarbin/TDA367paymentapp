@@ -6,14 +6,14 @@ public class Member {
     private String name;
     private Balance balance;
     private boolean isAssigned;
-    private int phoneNumber;
+    private String phoneNumber;
     //private List<Balance> balance; ??
 
-    public Member(String name, Balance balance, int phoneNumber){
+    public Member(String name, String phoneNumber){
         this.name = name;
         this.balance = new Balance(0);
         this.isAssigned = false;
-        this.phoneNumber = 0;
+        this.phoneNumber = phoneNumber;
     }
 
 
