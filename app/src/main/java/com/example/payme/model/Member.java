@@ -34,7 +34,14 @@ public class Member {
 
     }
 
+    public boolean getIsAssigned() {
+        return this.isAssigned;
+    }
+
     public void isAssigned(){
+        this.isAssigned = true;
+    }
+    public void isNotAssigned() {
         this.isAssigned = false;
     }
 

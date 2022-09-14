@@ -4,5 +4,5 @@ import java.util.List;
 
 public interface PaymentMethod {
 
-    void calculateBalance(List<MemberCost> membersOfEvent, Member payer);
+    void calculateBalance(List<Pair> membersOfEvent, Member payer);
 }
