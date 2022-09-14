@@ -31,7 +31,7 @@ public class Balance {
 
 
     public void updateBalanceMap(double amountToPay, Member memberToGetPaid){
-        balanceMap.put(memberToGetPaid.getName(), amountToPay);
+        balanceMap.put(memberToGetPaid.getName(), balanceValue + amountToPay);
     }
 
 
