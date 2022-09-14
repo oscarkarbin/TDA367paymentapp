@@ -25,16 +25,13 @@ public class Balance {
         balanceValue = 0;
     }
 
-//    public void updateBalance(double credit){
-//        balanceValue+=credit;
-//    }
+    public void updateBalance(double credit){
+        balanceValue+=credit;
+    }
 
 
-    public void updateBalanceMap(){
-        //updateBalance();
-        for(Member m: members){
-            balanceMap.put(m.getName(),balanceValue);
-        }
+    public void updateBalanceMap(double amountToPay, Member memberToGetPaid){
+        balanceMap.put(memberToGetPaid.getName(), amountToPay);
     }
 
 
