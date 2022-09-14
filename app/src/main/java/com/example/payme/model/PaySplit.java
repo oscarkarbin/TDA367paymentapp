@@ -31,7 +31,7 @@ public class PaySplit implements PaymentMethod{
         for (Pair<Member,Double> memberAndAmount: memberAndCostList){
             Member memberToPay = memberAndAmount.getFirst();
             if (!(memberToPay == memberToGetPaid)){
-                memberToPay.updateBalance(memberToPay, amountToPay, memberToGetPaid);
+                memberToPay.updateBalance(amountToPay, memberToGetPaid);
             }
         }
     }
