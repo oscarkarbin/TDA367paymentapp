@@ -8,7 +8,7 @@ import java.util.Map;
 /**
  * @author anton
  */
-class Group {
+public class Group {
     private List<Member> groupMembers = new ArrayList<>();
     private List<Event> groupEvents = new ArrayList<>();
     private String groupName;

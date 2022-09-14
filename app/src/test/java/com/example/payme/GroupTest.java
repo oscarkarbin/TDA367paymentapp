@@ -1,9 +1,10 @@
 package com.example.payme;
 
-import androidx.constraintlayout.widget.Group;
-
+import com.example.payme.model.Event;
 import com.example.payme.model.Factory;
+import com.example.payme.model.Group;
 import com.example.payme.model.Member;
+import com.example.payme.model.PaySplit;
 
 import org.junit.Test;
 
@@ -21,7 +22,21 @@ public class GroupTest {
         list.add(Anton);
         list.add(Jihad);
         list.add(Oskar);
-        Factory.createGroup("Grupp10", list);
-        assertEquals(list.size(),3);
+        Group group = Factory.createGroup("Grupp10", list);
+        assertEquals(group.getGroupMembers().size(),3);
+    }
+
+    @Test
+    public void CreateEvent(){
+        Member Anton = new Member("Anton", "076258015");
+        Member Jihad = new Member("jihad", "072827822");
+        Member Oskar = new Member("Oskar", "072827822");
+        List<Member> list = new ArrayList<Member>();
+        list.add(Anton);
+        list.add(Jihad);
+        list.add(Oskar);
+        Event event = new Event("middag",list, new PaySplit());
+        event.markEventAsDone();
+        assertFalse(event.isActive());
     }
 }
