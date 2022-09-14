@@ -23,11 +23,14 @@ public class Event {
         this.eventName = eventName;
         this.active = true;
         this.eventMembers = eventMembers;
+        this.membersAndPayment = new ArrayList<>();
         this.paymentMethod = paymentMethod;
     }
 
     public void getPayer(){
-        
+        //Get input from gui;
+        //identify the person who payed;
+        //return Member payer;
     }
 
     public void addMembersToPair(List<Member> eventMembers){
@@ -38,6 +41,13 @@ public class Event {
 
     public void calcEvent(Member payer){
         paymentMethod.calculateBalance(this.membersAndPayment, payer);
+    }
+
+    public void addMemberToPair2(Member member){
+        //Get input from gui;
+        double input = 0;
+        membersAndPayment.add(new Pair<Member, Double>(member, input));
+
     }
 
     public void setEventName(String name){

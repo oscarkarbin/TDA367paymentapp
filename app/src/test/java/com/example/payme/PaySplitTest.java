@@ -12,16 +12,18 @@ import java.util.List;
 public class PaySplitTest {
     @Test
     public void splitPayment() {
-        List<Member> memberList = createMemberList();
-        Event testEvent = new Event("Test-Event", memberList);
+        Member user1 = new Member("User1", "10");
+        List<Member> memberList = createMemberList(user1);
+        Event testEvent = new Event("Test-Event", memberList, new PaySplit());
         testEvent.addMembersToPair(memberList);
+        testEvent.calcEvent(user1);
 
 
         assertEquals(4, 2 + 2);
     }
 
-    private List<Member> createMemberList(){
-        Member user1 = new Member("User1", "10");
+    private List<Member> createMemberList(Member user1){
+
         Member user2 = new Member("User2", "20");
         Member user3 = new Member("User3", "30");
         List<Member> groupList = new ArrayList<>();
