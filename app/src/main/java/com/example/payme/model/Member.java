@@ -12,7 +12,7 @@ public class Member {
     private boolean isAssigned;
     private String phoneNumber;
     private Map<Member, Float> balanceMap = new HashMap<>();
-    //private List<Balance> balance; ??
+
 
     public Member(String name, String phoneNumber){
         this.name = name;
@@ -56,7 +56,7 @@ public class Member {
     }
 
     public void setPhoneNumber(){
-
+        //input from user in a text field
     }
 
 //    public int calculateBalance(Balance balance){
