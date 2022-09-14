@@ -8,9 +8,11 @@ public class Balance {
     private double balanceValue;
     private List<Member> members;
     private Map<String, Double> balanceMap = new HashMap<>();
+    private double totalBalance;
     public Balance(int balancevalue, List<Member> memberList) {
         this.balanceValue = balancevalue;
         this.members = memberList;
+        this.totalBalance = 0;
         for(Member m : memberList) {
             balanceMap.put(m.getName(), 0.0);
         }
@@ -23,13 +25,15 @@ public class Balance {
         balanceValue = 0;
     }
 
-    public void updateCredit(double credit){
-        balanceValue+=credit;
-    }
+//    public void updateBalance(double credit){
+//        balanceValue+=credit;
+//    }
 
-    void updateBalance(Member memberThatPays, double amountToPay, Member memberToPay){
-        memberThatPays.getBalance().updateCredit(-amountToPay);
-        memberToPay.getBalance().updateCredit(amountToPay);
+    void updateBalanceMap(){
+
+        for(Member m: members){
+            balanceMap.put(m.getName(),balanceValue);
+        }
     }
 
 
