@@ -18,13 +18,13 @@ public class Balance {
         balanceValue = 0;
     }
 
-    public void uptadeCredit(double credit){
+    public void updateCredit(double credit){
         balanceValue+=credit;
     }
 
     void updateBalance(Member memberThatPays, double amountToPay, Member memberToPay){
-        memberThatPays.getBalance().uptadeCredit(-amountToPay);
-        memberToPay.getBalance().uptadeCredit(amountToPay);
+        memberThatPays.getBalance().updateCredit(-amountToPay);
+        memberToPay.getBalance().updateCredit(amountToPay);
     }
 
 
