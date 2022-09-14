@@ -1,6 +1,7 @@
 package com.example.payme.model;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
 /**
@@ -10,11 +11,13 @@ class Group {
     private List<Member> groupMembers = new ArrayList<>();
     private List<Event> groupEvents = new ArrayList<>();
     private String groupName;
+    private HashMap<String,String> memember;
 
 
     Group(String name, List<Member> members) {
         this.groupName = name;
         this.groupMembers = members;
+        this.memember = new HashMap<>();
     }
 
     public String getGroupName() {

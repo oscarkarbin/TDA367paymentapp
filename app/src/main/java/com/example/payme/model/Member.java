@@ -1,5 +1,6 @@
 package com.example.payme.model;
 
+import java.util.HashMap;
 import java.util.Scanner;
 
 public class Member {
@@ -7,6 +8,7 @@ public class Member {
     private Balance balance;
     private boolean isAssigned;
     private String phoneNumber;
+
     //private List<Balance> balance; ??
 
     public Member(String name, String phoneNumber){
@@ -14,6 +16,7 @@ public class Member {
         this.balance = new Balance(0);
         this.isAssigned = false;
         this.phoneNumber = phoneNumber;
+
     }
 
 
