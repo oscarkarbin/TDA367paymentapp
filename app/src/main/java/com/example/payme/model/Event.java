@@ -12,6 +12,7 @@ import java.util.List;
 
 public class Event {
     private List<Member> eventMembers = new ArrayList<>();
+    private List<Pair<Member, Double>> membersAndPayment;
     private Pair pairAmountMember ;
     private String eventName;
     private boolean active;
@@ -28,8 +29,14 @@ public class Event {
         
     }
 
-    public void addMembersToPair(){
+    public void addMembersToPair(List<Member> eventMembers){
+        for (Member member: eventMembers) {
+            membersAndPayment.add(new Pair<Member, Double>(member, 0.0));
+        }
+    }
 
+    public void calcEvent(Member payer){
+        paymentMethod.calculateBalance(this.membersAndPayment, payer);
     }
 
     public void setEventName(String name){
