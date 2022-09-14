@@ -12,14 +12,17 @@ public class Member {
     private boolean isAssigned;
     private String phoneNumber;
     private Map<Member, Float> balanceMap = new HashMap<>();
-    //private List<Balance> balance; ??
+
 
     public Member(String name, String phoneNumber){
         this.name = name;
         this.isAssigned = false;
         this.phoneNumber = phoneNumber;
     }
-    public String getName(String name){
+    public void initMemberBalance(List<Member> members) {
+        this.balance = new Balance(0, members);
+    }
+    public String getName(){
         Scanner sc = new Scanner(System.in);
         System.out.println("Enter name of member ");
         this.name = sc.nextLine();
@@ -56,7 +59,7 @@ public class Member {
     }
 
     public void setPhoneNumber(){
-
+        //input from user in a text field
     }
 
 //    public int calculateBalance(Balance balance){

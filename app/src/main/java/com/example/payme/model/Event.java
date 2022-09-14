@@ -12,23 +12,41 @@ import java.util.List;
 
 public class Event {
     private List<Member> eventMembers = new ArrayList<>();
+    private List<Pair<Member, Double>> membersAndPayment;
     private Pair pairAmountMember ;
     private String eventName;
     private boolean active;
     private PaymentMethod paymentMethod;
 
 
-    public Event(String eventName, List<Member> eventMembers){
+    public Event(String eventName, List<Member> eventMembers, PaymentMethod paymentMethod){
         this.eventName = eventName;
         this.active = true;
         this.eventMembers = eventMembers;
+        this.membersAndPayment = new ArrayList<>();
+        this.paymentMethod = paymentMethod;
     }
 
     public void getPayer(){
-        
+        //Get input from gui;
+        //identify the person who payed;
+        //return Member payer;
     }
 
-    public void addMembersToPair(){
+    public void addMembersToPair(List<Member> eventMembers){
+        for (Member member: eventMembers) {
+            membersAndPayment.add(new Pair<Member, Double>(member, 0.0));
+        }
+    }
+
+    public void calcEvent(Member payer){
+        paymentMethod.calculateBalance(this.membersAndPayment, payer);
+    }
+
+    public void addMemberToPair2(Member member){
+        //Get input from gui;
+        double input = 0;
+        membersAndPayment.add(new Pair<Member, Double>(member, input));
 
     }
 
