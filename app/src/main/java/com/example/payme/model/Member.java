@@ -16,6 +16,7 @@ public class Member {
         this.phoneNumber = 0;
     }
 
+
     public String getName(String name){
         Scanner sc = new Scanner(System.in);
         System.out.println("Enter name of member ");
