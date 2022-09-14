@@ -23,9 +23,6 @@ public class Member {
         this.balance = new Balance(0, members);
     }
     public String getName(){
-        Scanner sc = new Scanner(System.in);
-        System.out.println("Enter name of member ");
-        this.name = sc.nextLine();
         return this.name;
     }
 
