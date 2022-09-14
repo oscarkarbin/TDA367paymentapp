@@ -33,9 +33,9 @@ public class Member {
         return balance;
     }
 
-    public void updateBalance(Member memberThatPays, double amountToPay, Member memberToPay){
-            balance.updateBalance(memberThatPays, amountToPay, memberToPay);
-    }
+//    public void updateBalance(Member memberThatPays, double amountToPay, Member memberToPay){
+//            balance.updateBalance();
+//    }
 
     public void resetBalance(){
         balance.resetCredit();
