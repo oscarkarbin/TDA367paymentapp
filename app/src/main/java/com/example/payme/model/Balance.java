@@ -17,11 +17,4 @@ public class Balance {
     public void resetBalance() {
         balanceValue = 0;
     }
-
-
-    void calculateEventBalance(List<Member> memberList){
-        for (Member m : memberList){
-           // m.updateBalance();
-        }
-    }
 }
