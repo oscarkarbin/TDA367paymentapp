@@ -9,6 +9,9 @@ import android.widget.Button;
 
 import com.example.payme.R;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 public class MainActivity extends AppCompatActivity {
     Dialog myDialog;
     @Override
