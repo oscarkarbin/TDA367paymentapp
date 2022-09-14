@@ -19,7 +19,10 @@ public class Member {
         this.isAssigned = false;
         this.phoneNumber = phoneNumber;
     }
-    public String getName(String name){
+    public void initMemberBalance(List<Member> members) {
+        this.balance = new Balance(0, members);
+    }
+    public String getName(){
         Scanner sc = new Scanner(System.in);
         System.out.println("Enter name of member ");
         this.name = sc.nextLine();

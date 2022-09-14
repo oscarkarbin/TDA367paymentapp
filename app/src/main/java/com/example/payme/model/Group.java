@@ -22,7 +22,7 @@ class Group {
         this.membersMap = new HashMap<>();
         this.eventsMap = new HashMap<>();
         for(Member m : members)
-            m.initBalance(members);
+            m.initMemberBalance(members);
     }
 
     public String getGroupName() {
