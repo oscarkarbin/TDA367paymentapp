@@ -7,10 +7,19 @@
     tools:context=".model.MainActivity">
 
     <ImageButton
-        android:id="@+id/imageButton"
-        android:layout_width="109dp"
-        android:layout_height="95dp"
-        app:srcCompat="@android:drawable/ic_input_add"
-        tools:layout_editor_absoluteX="416dp"
-        tools:layout_editor_absoluteY="750dp" />
+        android:id="@+id/CreateGroupButton"
+        android:layout_width="77dp"
+        android:layout_height="62dp"
+        android:layout_marginStart="337dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginBottom="6dp"
+        android:contentDescription="@string/appbar_scrolling_view_behavior"
+        android:onClick="onClick"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.984"
+        app:srcCompat="@android:drawable/ic_input_add" />
 </androidx.constraintlayout.widget.ConstraintLayout>

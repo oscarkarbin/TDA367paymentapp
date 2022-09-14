@@ -1,20 +1,23 @@
 package com.example.payme.model;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
 /**
  * @author anton
  */
-public class Group {
+class Group {
     private List<Member> groupMembers = new ArrayList<>();
     private List<Event> groupEvents = new ArrayList<>();
     private String groupName;
+    private HashMap<String,String> memember;
 
 
-    public Group(String name, List<Member> members) {
+    Group(String name, List<Member> members) {
         this.groupName = name;
         this.groupMembers = members;
+        this.memember = new HashMap<>();
     }
 
     public String getGroupName() {
@@ -36,8 +39,7 @@ public class Group {
             }
         }
     }
-    public void createEvent() {
-        String eventName = "";
+    public void createEvent(String eventName) {
         List<Member> eventMembers = new ArrayList<>();
         for(Member m : groupMembers) {
             if(m.getIsAssigned()) {
@@ -45,6 +47,13 @@ public class Group {
                 m.isNotAssigned();
             }
         }
-        Event e = new Event(eventName, eventMembers);
+        Event e = Factory.createEvent(eventName, eventMembers);
+        groupEvents.add(e);
+    }
+    public void addNewMember(String name, String phoneNumber) {
+        groupMembers.add(new Member(name, phoneNumber));
+    }
+    public void removeMember(Member member) {
+        groupMembers.remove(member);
     }
 }

@@ -2,7 +2,7 @@ package com.example.payme.model;
 
 import java.nio.channels.FileLock;
 
-public class Pair<A extends Member,B extends Float> {
+public class Pair<A,B> {
     private final A member;
     private final B payedAmount;
 
