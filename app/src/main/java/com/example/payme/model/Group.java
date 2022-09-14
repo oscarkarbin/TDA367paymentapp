@@ -6,13 +6,13 @@ import java.util.List;
 /**
  * @author anton
  */
-public class Group {
+class Group {
     private List<Member> groupMembers = new ArrayList<>();
     private List<Event> groupEvents = new ArrayList<>();
     private String groupName;
 
 
-    public Group(String name, List<Member> members) {
+    Group(String name, List<Member> members) {
         this.groupName = name;
         this.groupMembers = members;
     }
