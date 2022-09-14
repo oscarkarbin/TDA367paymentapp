@@ -5,15 +5,16 @@ import java.util.List;
 public class PayDetail implements PaymentMethod{
 
     @Override
-    public void calculateBalance(List<Pair<Member,Float>> memberAndCostList, Member payer) {
+    public void calculateBalance(List<Pair<Member,Double>> memberAndCostList, Member payer) {
         updateBalance(memberAndCostList, payer);
     }
 
-    private void updateBalance(List<Pair<Member,Float>> memberAndCostList, Member payer){
-        for (Pair<Member, Float> memberAndAmount: memberAndCostList) {
-            Member personThatPays = memberAndAmount.getFirst();
-            if(!(personThatPays == payer)){
-
+    private void updateBalance(List<Pair<Member,Double>> memberAndCostList, Member memberToGetPaid){
+        for (Pair<Member, Double> memberAndAmount: memberAndCostList) {
+            Member memberToPay = memberAndAmount.getFirst();
+            Double amountToPay = memberAndAmount.getSecond();
+            if(!(memberToPay == memberToGetPaid)){
+                memberToPay.updateBalance(memberToPay, amountToPay, memberToGetPaid);
             }
         }
     }
