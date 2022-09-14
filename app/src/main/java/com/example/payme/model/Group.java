@@ -44,7 +44,7 @@ class Group {
             }
         }
     }
-    public void createEvent(String eventName) {
+    public void createEvent(String eventName, PaymentMethod paymentMethod) {
         List<Member> eventMembers = new ArrayList<>();
         for(Member m : groupMembers) {
             if(m.getIsAssigned()) {
@@ -52,7 +52,7 @@ class Group {
                 m.isNotAssigned();
             }
         }
-        Event e = Factory.createEvent(eventName, eventMembers);
+        Event e = Factory.createEvent(eventName, eventMembers, paymentMethod);
         groupEvents.add(e);
     }
     public void addNewMember(String name, String phoneNumber) {
