@@ -3,6 +3,7 @@ package com.example.payme.model;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.Scanner;
 
 public class Member {
@@ -10,21 +11,13 @@ public class Member {
     private Balance balance;
     private boolean isAssigned;
     private String phoneNumber;
+    private Map<Member, Float> balanceMap = new HashMap<>();
     //private List<Balance> balance; ??
 
     public Member(String name, String phoneNumber){
         this.name = name;
         this.isAssigned = false;
         this.phoneNumber = phoneNumber;
-    }
-
-    public void initBalance(List<Member> members) {
-        List<Member> balanceMembers = new ArrayList<>();
-        for(Member m : members) {
-            if(!(m == this))
-                balanceMembers.add(m);
-        }
-        this.balance = new Balance(0, balanceMembers);
     }
     public String getName(String name){
         Scanner sc = new Scanner(System.in);
@@ -33,7 +26,7 @@ public class Member {
         return this.name;
     }
 
-    public Balance getBalance(Balance balance) {
+    public Balance getBalance() {
         return balance;
     }
 
