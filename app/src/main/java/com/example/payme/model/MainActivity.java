@@ -6,6 +6,9 @@ import android.os.Bundle;
 
 import com.example.payme.R;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 public class MainActivity extends AppCompatActivity {
 
     @Override
