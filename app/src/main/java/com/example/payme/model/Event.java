@@ -33,11 +33,11 @@ public class Event {
         //return Member payer;
     }
 
-    public void addMembersToPair(List<Member> eventMembers){
-        for (Member member: eventMembers) {
-            membersAndPayment.add(new Pair<Member, Double>(member, 0.0));
-        }
+    //Ful metod för temporärt test
+    public void addMembersToPair(List<Pair<Member, Double>> memberAndPayment){
+        this.membersAndPayment = memberAndPayment;
     }
+
 
     public void calcEvent(Member payer){
         paymentMethod.calculateBalance(this.membersAndPayment, payer);
