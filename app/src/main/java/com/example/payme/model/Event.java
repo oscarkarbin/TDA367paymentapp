@@ -6,7 +6,6 @@ import android.os.Build;
 import androidx.annotation.RequiresApi;
 
 import java.text.SimpleDateFormat;
-import java.time.Clock;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -16,7 +15,7 @@ public class Event {
     private String eventName;
     private boolean active;
 
-    private MemberCost memberCost;
+    private Pair memberCost;
 
     public Event(String eventName, List<Member> eventMembers){
         this.eventName = eventName;
