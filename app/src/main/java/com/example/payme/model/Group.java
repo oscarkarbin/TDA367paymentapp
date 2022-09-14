@@ -47,4 +47,10 @@ public class Group {
         }
         Event e = new Event(eventName, eventMembers);
     }
+    public void addNewMember(String name, String phoneNumber) {
+        groupMembers.add(new Member(name, phoneNumber));
+    }
+    public void removeMember(Member member) {
+        groupMembers.remove(member);
+    }
 }

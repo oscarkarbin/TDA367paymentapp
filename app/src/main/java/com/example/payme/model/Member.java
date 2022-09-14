@@ -49,7 +49,7 @@ public class Member {
         this.isAssigned = false;
     }
 
-    public int getPhoneNumber(){
+    public String getPhoneNumber(){
         return this.phoneNumber;
     }
 
