@@ -21,8 +21,6 @@ class Group {
         this.groupMembers = members;
         this.membersMap = new HashMap<>();
         this.eventsMap = new HashMap<>();
-        for(Member m : members)
-            m.initBalance(members);
     }
 
     public String getGroupName() {
