@@ -3,6 +3,7 @@ package com.example.payme.model;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 /**
  * @author anton
@@ -11,13 +12,17 @@ class Group {
     private List<Member> groupMembers = new ArrayList<>();
     private List<Event> groupEvents = new ArrayList<>();
     private String groupName;
-    private HashMap<String,String> memember;
+    private Map<String,String> membersMap;
+    private Map<String, Event> eventsMap;
 
 
     Group(String name, List<Member> members) {
         this.groupName = name;
         this.groupMembers = members;
-        this.memember = new HashMap<>();
+        this.membersMap = new HashMap<>();
+        this.eventsMap = new HashMap<>();
+        for(Member m : members)
+            m.initBalance(members);
     }
 
     public String getGroupName() {

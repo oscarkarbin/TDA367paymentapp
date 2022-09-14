@@ -1,6 +1,8 @@
 package com.example.payme.model;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Scanner;
 
 public class Member {
@@ -13,10 +15,18 @@ public class Member {
 
     public Member(String name, String phoneNumber){
         this.name = name;
-        this.balance = new Balance(0);
         this.isAssigned = false;
         this.phoneNumber = phoneNumber;
 
+    }
+
+    public void initBalance(List<Member> members) {
+        List<Member> balanceMembers = new ArrayList<>();
+        for(Member m : members) {
+            if(!(m == this))
+                balanceMembers.add(m);
+        }
+        this.balance = new Balance(0, balanceMembers);
     }
 
 
