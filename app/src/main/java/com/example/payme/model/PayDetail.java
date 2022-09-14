@@ -13,7 +13,7 @@ public class PayDetail implements PaymentMethod{
         for (Pair<Member, Float> memberAndAmount: memberAndCostList) {
             Member personThatPays = memberAndAmount.getFirst();
             if(!(personThatPays == payer)){
-                //Tell the person that needs to pay, how much to pay the payer
+
             }
         }
     }

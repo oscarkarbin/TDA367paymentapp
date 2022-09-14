@@ -17,4 +17,9 @@ public class Balance {
     public void resetBalance() {
         balanceValue = 0;
     }
+
+    void updateBalance(Member memberThatPays, float amountToPay, Member memberToPay){
+
+    }
+
 }

@@ -31,6 +31,7 @@ public class PaySplit implements PaymentMethod{
         for (Pair<Member,Float> memberAndAmount: memberAndCostList){
             Member personThatPays = memberAndAmount.getFirst();
             if (!(personThatPays == memberWhoPaid)){
+
                 // Tell member how much to pay the person who paid for the event
             }
         }

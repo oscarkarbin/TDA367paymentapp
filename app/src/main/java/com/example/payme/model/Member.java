@@ -10,14 +10,12 @@ public class Member {
     private Balance balance;
     private boolean isAssigned;
     private String phoneNumber;
-
     //private List<Balance> balance; ??
 
     public Member(String name, String phoneNumber){
         this.name = name;
         this.isAssigned = false;
         this.phoneNumber = phoneNumber;
-
     }
 
     public void initBalance(List<Member> members) {
@@ -28,8 +26,6 @@ public class Member {
         }
         this.balance = new Balance(0, balanceMembers);
     }
-
-
     public String getName(String name){
         Scanner sc = new Scanner(System.in);
         System.out.println("Enter name of member ");
@@ -41,8 +37,8 @@ public class Member {
         return balance;
     }
 
-    public void updateBalance(){
-        // Updates a users balance
+    public void updateBalance(Member memberThatPays, float amountToPay, Member memberToPay){
+            balance.updateBalance(memberThatPays, amountToPay, memberToPay);
     }
 
     public void resetBalance(){
