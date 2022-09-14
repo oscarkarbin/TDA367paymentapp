@@ -36,4 +36,15 @@ public class Group {
             }
         }
     }
+    public void createEvent() {
+        String eventName = "";
+        List<Member> eventMembers = new ArrayList<>();
+        for(Member m : groupMembers) {
+            if(m.getIsAssigned()) {
+                eventMembers.add(m);
+                m.isNotAssigned();
+            }
+        }
+        Event e = new Event(eventName, eventMembers);
+    }
 }
