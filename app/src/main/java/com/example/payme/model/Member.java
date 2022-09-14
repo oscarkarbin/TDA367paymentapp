@@ -33,7 +33,7 @@ public class Member {
         return this.name;
     }
 
-    public Balance getBalance(Balance balance) {
+    public Balance getBalance() {
         return balance;
     }
 
@@ -42,7 +42,7 @@ public class Member {
     }
 
     public void resetBalance(){
-        balance.resetBalance();
+        balance.resetCredit();
 
     }
 
