@@ -30,7 +30,7 @@ public class Member {
         return balance;
     }
 
-    public void updateBalance(Member memberThatPays, float amountToPay, Member memberToPay){
+    public void updateBalance(Member memberThatPays, double amountToPay, Member memberToPay){
             balance.updateBalance(memberThatPays, amountToPay, memberToPay);
     }
 
