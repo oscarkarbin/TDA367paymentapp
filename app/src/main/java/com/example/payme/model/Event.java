@@ -46,10 +46,9 @@ public class Event {
         paymentMethod.calculateBalance(this.membersAndPayment, payer);
     }
 
-    public void addMemberToPair2(Member member){
+    public void addMemberToPair2(Member member, double paidAmoint){
         //Get input from gui;
-        double input = 0;
-        membersAndPayment.add(new Pair<Member, Double>(member, input));
+        membersAndPayment.add(new Pair<Member, Double>(member, paidAmoint));
 
     }
 
