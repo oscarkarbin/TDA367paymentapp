@@ -56,8 +56,8 @@ public class Member {
         return this.phoneNumber;
     }
 
-    public void setPhoneNumber(){
-        //input from user in a text field
+    public void setPhoneNumber(String phoneNumber){
+        this.phoneNumber = phoneNumber;
     }
 
 //    public int calculateBalance(Balance balance){
