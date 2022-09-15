@@ -13,10 +13,11 @@ import java.util.Map;
 public class Balance {
     private Map<String, Double> balanceMap = new HashMap<>();
     private List<Member> members = new ArrayList<>();
-    public Balance(List<Member> memberList) {
+    public Balance(Member member, List<Member> memberList) {
         this.members = memberList;
         for(Member m : memberList) {
-            balanceMap.put(m.getName(), 0.0);
+            if(m != member)
+                balanceMap.put(m.getName(), 0.0);
         }
     }
     public void resetBalances() {

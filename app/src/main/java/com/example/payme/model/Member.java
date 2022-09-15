@@ -20,7 +20,7 @@ public class Member {
         this.phoneNumber = phoneNumber;
     }
     public void initMemberBalance(List<Member> members) {
-        this.balance = new Balance(members);
+        this.balance = new Balance(this, members);
     }
     public String getName(){
         return this.name;

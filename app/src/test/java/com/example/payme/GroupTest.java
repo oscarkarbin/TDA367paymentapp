@@ -14,7 +14,7 @@ import static org.junit.Assert.*;
 
 public class GroupTest {
     @Test
-    public void CreatGroup(){
+    public void testCreateGroup(){
         Member Anton = new Member("Anton", "076258015");
         Member Jihad = new Member("jihad", "072827822");
         Member Oskar = new Member("Oskar", "072827822");
@@ -27,7 +27,7 @@ public class GroupTest {
     }
 
     @Test
-    public void CreateEvent(){
+    public void testCreateEvent(){
         Member Anton = new Member("Anton", "076258015");
         Member Jihad = new Member("jihad", "072827822");
         Member Oskar = new Member("Oskar", "072827822");
@@ -35,8 +35,70 @@ public class GroupTest {
         list.add(Anton);
         list.add(Jihad);
         list.add(Oskar);
-        Event event = new Event("middag",list, new PaySplit());
-        event.markEventAsDone();
-        assertFalse(event.isActive());
+        Group g = new Group("grupp1", list);
+        g.createEvent("middag", new PaySplit());
+
+        assertEquals(g.getGroupEvents().size(), 1);
+    }
+    @Test
+    public void testRemoveMember() {
+        Member Anton = new Member("Anton", "076258015");
+        Member Jihad = new Member("jihad", "072827822");
+        Member Oskar = new Member("Oskar", "072827822");
+        List<Member> list = new ArrayList<Member>();
+        list.add(Anton);
+        list.add(Jihad);
+        list.add(Oskar);
+        Group g = new Group("grupp1", list);
+        g.removeMember(Anton);
+        assertFalse(g.getGroupMembers().contains(Anton));
+    }
+    @Test
+    public void testAddMember() {
+        Member Anton = new Member("Anton", "076258015");
+        Member Jihad = new Member("jihad", "072827822");
+
+        List<Member> list = new ArrayList<Member>();
+        list.add(Anton);
+        list.add(Jihad);
+        Group g = new Group("grupp1", list);
+        g.addNewMember("Oskar", "072827822");
+        assertEquals(g.getGroupMembers().size(), 3);
+    }
+    @Test
+    public void testCreateEventWithMemberAssigned() {
+        Member Anton = new Member("Anton", "076258015");
+        Member Jihad = new Member("jihad", "072827822");
+        List<Member> list = new ArrayList<Member>();
+        list.add(Anton);
+        list.add(Jihad);
+        Group g = new Group("grupp1", list);
+        g.getGroupMembers().get(0).isAssigned();
+        g.createEvent("event", new PaySplit());
+        Event e = g.getGroupEvents().get(0);
+
+        assertEquals(e.getMembers().size(), 1);
+    }
+    @Test
+    public void testResetDebts() {
+        Member Anton = new Member("Anton", "076258015");
+        Member Jihad = new Member("jihad", "072827822");
+        List<Member> list = new ArrayList<Member>();
+        list.add(Anton);
+        list.add(Jihad);
+        Group g = new Group("grupp1", list);
+        g.createEvent("event", new PaySplit());
+        g.resetDebts();
+        assertFalse(g.getGroupEvents().get(0).isActive());
+    }
+    @Test
+    public void testGetGroupName() {
+        Member Anton = new Member("Anton", "076258015");
+        Member Jihad = new Member("jihad", "072827822");
+        List<Member> list = new ArrayList<Member>();
+        list.add(Anton);
+        list.add(Jihad);
+        Group g = new Group("grupp1", list);
+        assertEquals(g.getGroupName(), "grupp1");
     }
 }
