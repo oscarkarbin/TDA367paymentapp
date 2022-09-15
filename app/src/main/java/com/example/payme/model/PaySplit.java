@@ -6,8 +6,8 @@ public class PaySplit implements PaymentMethod{
 
     @Override
     public void calculateBalance(List<Pair<Member,Double>> memberAndCostList, Member payer) {
-        Double totalGroupCost = calcTotalCost(memberAndCostList);
-        Double splitCost = calcDividedCost(totalGroupCost, memberAndCostList.size());
+        double totalGroupCost = calcTotalCost(memberAndCostList);
+        double splitCost = calcDividedCost(totalGroupCost, memberAndCostList.size());
         updateBalance(memberAndCostList, payer, splitCost);
     }
 
