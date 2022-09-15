@@ -32,6 +32,9 @@ public class Event {
         //identify the person who payed;
         //return Member payer;
     }
+    public List<Member> getMembers() {
+        return new ArrayList<>(eventMembers);
+    }
 
     //Ful metod för temporärt test
     public void addMembersToPair(List<Pair<Member, Double>> memberAndPayment){
