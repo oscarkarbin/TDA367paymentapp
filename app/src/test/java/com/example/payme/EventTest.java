@@ -1,12 +1,17 @@
 package com.example.payme;
 
 import com.example.payme.model.Event;
+import com.example.payme.model.Member;
+import com.example.payme.model.Pair;
 import com.example.payme.model.PayDetail;
 import com.example.payme.model.PaySplit;
 
 import static org.junit.Assert.*;
 
 import org.junit.Test;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class EventTest {
 
