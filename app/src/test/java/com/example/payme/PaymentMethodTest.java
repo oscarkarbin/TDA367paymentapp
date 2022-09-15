@@ -69,8 +69,9 @@ public class PaymentMethodTest {
         user2.initMemberBalance(member2BalanceList);
         user3.initMemberBalance(member3BalanceList);
 
-        PaymentMethod paymentMethod = new PayDetail();
-        paymentMethod.calculateBalance(memberAndPayment, user3);
+        Event testEvent = new Event("Testevent", memberList, new PayDetail());
+        testEvent.addMembersToPair(memberAndPayment);
+        testEvent.calcEvent(user3);
 
         assertEquals(-100, user1.getBalance().getTotalBalance(), 0.1);
         assertEquals(-200, user2.getBalance().getTotalBalance(), 0.1);
