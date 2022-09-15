@@ -16,15 +16,18 @@ public class Event {
     private Pair pairAmountMember ;
     private String eventName;
     private boolean active;
+    private String date;
     private PaymentMethod paymentMethod;
 
 
+    @RequiresApi(api = Build.VERSION_CODES.O)
     public Event(String eventName, List<Member> eventMembers, PaymentMethod paymentMethod){
         this.eventName = eventName;
         this.active = true;
         this.eventMembers = eventMembers;
         this.membersAndPayment = new ArrayList<>();
         this.paymentMethod = paymentMethod;
+        this.date = getCurrentDate();
     }
 
     public void getPayer(){
@@ -34,6 +37,9 @@ public class Event {
     }
     public List<Member> getMembers() {
         return new ArrayList<>(eventMembers);
+    }
+    public String getEventDate() {
+        return this.date;
     }
 
     //Ful metod för temporärt test
@@ -64,12 +70,10 @@ public class Event {
         active = false;
     }
 
-    @RequiresApi(api = Build.VERSION_CODES.O)
-    public void getCurrentDate(){
-        SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");
+    //@RequiresApi(api = Build.VERSION_CODES.O)
+    private String getCurrentDate(){
+        SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");
         Date date = new Date();
-        System.out.println(formatter.format(date));
-
+        return formatter.format(date);
     }
-    
 }

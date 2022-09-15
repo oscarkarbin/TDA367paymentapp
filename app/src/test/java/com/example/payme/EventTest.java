@@ -29,4 +29,9 @@ public class EventTest {
         eventTest.setEventName("random");
         assertEquals(name, "random" );
     }
+    @Test
+    public void testGetDate() {
+        Event event = new Event("test", null, new PaySplit());
+        assertEquals(event.getEventDate(), "2022-09-15");
+    }
 }
