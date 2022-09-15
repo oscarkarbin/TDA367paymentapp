@@ -31,6 +31,9 @@ public class Group {
     public List<Member> getGroupMembers() {
         return new ArrayList<>(groupMembers);
     }
+    public List<Event> getGroupEvents() {
+        return new ArrayList<>(groupEvents);
+    }
     public void resetDebts() {
         for(Member m : groupMembers) {
             m.resetBalance();
