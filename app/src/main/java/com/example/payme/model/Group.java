@@ -16,7 +16,7 @@ public class Group {
     private Map<String, Event> eventsMap;
 
 
-    Group(String name, List<Member> members) {
+    public Group(String name, List<Member> members) {
         this.groupName = name;
         this.groupMembers = members;
         this.membersMap = new HashMap<>();
